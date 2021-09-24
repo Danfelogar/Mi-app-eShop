@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Product() {
+export default function Product({product : {id, name, productType, image, price,rating, description}}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -55,27 +55,27 @@ export default function Product() {
             varinat='h5'
             color='textSecondary'
             >
-                {accounting.formatMoney(50)}
+                {accounting.formatMoney(price)}
             </Typography>
         }
-        title="Mouse Logitech G203"
+        title={ name }
         subheader="In Stock"
       />
       <CardMedia
         className={classes.media}
-        image="https://http2.mlstatic.com/D_NQ_NP_968506-MCO43754960908_102020-O.webp"
-        title="Mouse Gamer"
+        image={ image }
+        title={ name }
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          Running Shoes
+          { productType }
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to Cart" >
           <AddShoppingCart fontSize="large" />
         </IconButton>
-        {Array(4)
+        {Array(rating)
         .fill()
         .map((_, i) =>(
             <p>&#11088;</p>
@@ -94,7 +94,7 @@ export default function Product() {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>
-          Logitech designs products and experiences that occupy an everyday place in people's lives, focusing on innovation and quality. Its aim is to create unique and meaningful moments for its users. Logitech mouses conform to the shape of your hand to provide hours of comfort. Without having to move your arm to slide the cursor, your hand will be less fatigued. They are ideal for any workspace and those who have a table full of various objects.
+          { description }
           </Typography>
         </CardContent>
       </Collapse>

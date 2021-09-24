@@ -2,16 +2,16 @@ import React from 'react';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Badge from '@material-ui/core/Badge';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import logo1 from '../assets/eshop.png';
 import logo2 from '../assets/logo-eshop.png';
@@ -20,10 +20,11 @@ const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
     height: '1px',
-    marginBottom: '7rem',
+    marginBottom: '6rem',
   },
   wrap:{
     height: '70px',
+    backgroundColor: '#482880',
   },
   menuButton: {
     height: '10px',
@@ -90,6 +91,14 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  button: {
+    alignSelf: 'center',
+    justifySeltf: 'center',
+    marginLeft: theme.spacing(2),
+  },
+  btnText: {
+    color: 'white',
+  }
 }));
 
 export default function Navbar() {
@@ -100,9 +109,6 @@ export default function Navbar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
@@ -128,8 +134,8 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Sign In</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Shopping Cart</MenuItem>
     </Menu>
   );
 
@@ -145,31 +151,17 @@ export default function Navbar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+        <AccountCircleIcon fontSize="large"/>
+        <p>Sign In</p>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
+        <Badge badgeContent={4}
+        variant="dot"
+        anchorOrigin={{vertical: 'bottom',horizontal: 'left',}}
+        color="primary">
+          <ShoppingCartIcon fontSize="large"/>
+        </Badge>
+        <p>Shopping Cart</p>
       </MenuItem>
     </Menu>
   );
@@ -187,9 +179,6 @@ export default function Navbar() {
             <img className={classes.image} src={ logo2 } alt="logo-of-eshop2" />
             <img className={classes.image} src={ logo1 } alt="logo-of-eshop1" />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
-          </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -204,26 +193,19 @@ export default function Navbar() {
             />
           </div>
           <div className={classes.grow} />
+          <Typography className={classes.title} variant="h6" noWrap>
+          Hello Guest
+          </Typography>
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
+            <div className={classes.button}>
+              <Button variant="outlined">
+                <strong className={classes.btnText} >Sign In</strong>
+              </Button>
+            </div>
+            <IconButton aria-label="show cart  items" color="inherit">
+            <Badge badgeContent={4} color="primary">
+              <ShoppingCartIcon fontSize="large" />
+            </Badge>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>

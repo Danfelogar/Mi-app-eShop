@@ -1,4 +1,5 @@
-const products = [
+
+export const products = [
     {
         id:1,
         name:`Mouse Logitech G203 Lightsync`,
@@ -32,7 +33,7 @@ const products = [
         productType:`Mouse Gamer`,
         price:85,
         rating:5,
-        image:`https://http2.mlstatic.com/D_NQ_NP_851400-MLA45376780037_032021-O.webp`,
+        image:`https://http2.mlstatic.com/D_NQ_NP_643543-MLA45377029958_032021-O.webp`,
         description:`To work from home with the computer or take advantage of leisure moments, you need comfort and ease of movement. With your HyperX Dart find what you are looking for in a single device with the best technology.
         The gaming mouse will offer you the possibility to make a difference and take advantage of your games. Its connectivity and smooth sensor will help you scroll quickly on the screen.`,
     },
@@ -82,15 +83,6 @@ const products = [
         price:30,
         rating:5,
         image:`https://http2.mlstatic.com/D_NQ_NP_970231-MCO47308450440_082021-O.webp`,
-        description:`The cell phone works on the networks that are detailed in the specifications on the Internet. Check well the networks in which you want it. From the moment the ICT Ministry awarded the 4G bands to the operators, it assigned Claro, Direct TV and UNE the 2,500 2,600 MHz band and Tigo-ETB, Movistar and Avantel the 1,700 MHz band. For Colombia 4G the equipment must indicate that supports: LTE 2,500 2600 MHz or 2.5 2.6 GHz or band 7, also known as the Asian band (Claro's network, Direc TV and UNE) and 1,700 MHz or AWS or band 4, also known as the American band (Movistar network , Tigo-ETB and Avantel).`,
-    },
-    {
-        id:10,
-        name:`Sports Set In Lycra Lady 3 Pieces`,
-        productType:`Lady sportswear`,
-        price:30,
-        rating:5,
-        image:`https://http2.mlstatic.com/D_NQ_NP_970231-MCO47308450440_082021-O.webp`,
         description:`Sports Set Lycra Nylon Power Long Leggings + Top + Mesh Blouse
         Number of Pieces: 3
         Size: Unique (recommended for S and M)
@@ -100,12 +92,12 @@ const products = [
         The sports set is ideal for use in sports activities such as Gym, Running, Cycling, Swimming, Crossfit, Aerobics, Yoga, Pilates, or simply to feel comfortable at home. The advantage of Nylon Power is that the caliber of the fabric does not allow it to be translucent and to mark what we do not want to show, in turn it remains tight during activity and does not roll.`,
     },
     {
-        id:11,
+        id:10,
         name:`Jogger`,
         productType:`Lady sportswear`,
         price:14,
         rating:3,
-        image:`https://http2.mlstatic.com/D_NQ_NP_970231-MCO47308450440_082021-O.webp`,
+        image:`https://http2.mlstatic.com/D_NQ_NP_763505-MCO47086194462_082021-O.webp`,
         description:`Hello, thank you very much for visiting us!
         We are RUNNER, a company specialized in the highest quality hoodies and joggers on the market.
         Our joggers are made of brushed cotton, with a soft texture, wide silhouette, modern style with pockets, 100% national.
@@ -113,7 +105,7 @@ const products = [
         When choosing the size you will find a measurement guide through which you can guide yourself to choose the one that best suits your silhouette.`,
     },
     {
-        id:12,
+        id:11,
         name:`Xiaomi Mi Smart Band 6 1.56"`,
         productType:`Samrtband`,
         price:150,
@@ -123,7 +115,7 @@ const products = [
         The oxygen level in the blood is a very important indicator in determining general well-being. You will be able to control this data from your wrist and evaluate your physical condition while doing your daily activities or during intense training sessions.`,
     },
     {
-        id:13,
+        id:12,
         name:`Honor Band 6 1.47"`,
         productType:`Samrtband`,
         price:200,
@@ -134,7 +126,7 @@ const products = [
         Rest better, perform more thanks to the sleep monitoring function you can learn more about your habits at night and the quality of your rest so that you can perform better the next day.`,
     },
     {
-        id:14,
+        id:13,
         name:`Acer Predator Helios 300 Gaming Laptop Pc, 17.3 Full Hd Ips`,
         productType:`PC`,
         price:3000,
